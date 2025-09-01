@@ -51,32 +51,31 @@ type Group struct {
 // E.g.  'go run ...' - 'run' is the command. Cobra requires
 // you to define the usage and description as part of your command
 // definition to ensure usability.
+// Command 是应用程序的命令,例如 'go run' run 就是命令。
+// Cobra 要求在命令定义中定义用法和描述，以确保可用性
 type Command struct {
-	// Use is the one-line usage message.
-	// Recommended syntax is as follows:
-	//   [ ] identifies an optional argument. Arguments that are not enclosed in brackets are required.
-	//   ... indicates that you can specify multiple values for the previous argument.
-	//   |   indicates mutually exclusive information. You can use the argument to the left of the separator or the
-	//       argument to the right of the separator. You cannot use both arguments in a single use of the command.
-	//   { } delimits a set of mutually exclusive arguments when one of the arguments is required. If the arguments are
-	//       optional, they are enclosed in brackets ([ ]).
+	// Use 是一行可用信息
+	// 推荐语法如下：
+	//   [ ] 标识可选参数。未用括号括起来的参数是必需的。
+	//   ... 表示可以为前一个参数指定多个值。
+	//   | 表示互斥信息。您可以使用分隔符左侧的参数，也可以使用分隔符右侧的参数。您不能在一次命令中同时使用这两个参数。
+	//   { } 当其中一个参数为必需参数时，用于分隔一组互斥的参数。如果参数是可选的，则将其括在方括号 ([ ]) 中。
 	// Example: add [-F file | -D dir]... [-f format] profile
 	Use string
 
-	// Aliases is an array of aliases that can be used instead of the first word in Use.
+	// Aliases 是一个别名数组，可以用来代替 Use 中的第一个单词。
 	Aliases []string
 
-	// SuggestFor is an array of command names for which this command will be suggested -
-	// similar to aliases but only suggests.
+	// SuggestFor 是一个命令名称数组，该命令将被建议为类似于别名但仅建议。
 	SuggestFor []string
 
-	// Short is the short description shown in the 'help' output.
+	// Short 是“帮助”输出中显示的简短描述。
 	Short string
 
-	// The group id under which this subcommand is grouped in the 'help' output of its parent.
+	// 该子命令在其父级的“帮助”输出中所属的组 ID。
 	GroupID string
 
-	// Long is the long message shown in the 'help <this-command>' output.
+	// Long 是“help <this-command>”输出中显示的长消息。
 	Long string
 
 	// Example is examples of how to use the command.
