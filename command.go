@@ -79,6 +79,7 @@ type Command struct {
 	Long string
 
 	// Example is examples of how to use the command.
+	// Example 如何使用该命令的一个案例
 	Example string
 
 	// ValidArgs is list of all valid non-flag arguments that are accepted in shell completions

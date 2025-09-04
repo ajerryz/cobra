@@ -4,7 +4,10 @@ import "github.com/spf13/cobra"
 
 var removeTaskCmd = &cobra.Command{
 	Use:   "remove",
-	Short: "remove a task",
+	Short: "remove task",
+	Run: func(cmd *cobra.Command, args []string) {
+
+	},
 }
 
 func init() {

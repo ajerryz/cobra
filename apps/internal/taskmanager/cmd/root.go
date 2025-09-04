@@ -1,6 +1,8 @@
 package cmd
 
 import (
+	"fmt"
+
 	"github.com/ajerryz/cobra-apps/internal/taskmanager/version"
 	"github.com/spf13/cobra"
 )
@@ -14,6 +16,8 @@ var rootCmd = &cobra.Command{
 			_ = cmd.Help()
 			return
 		}
+
+		fmt.Printf("[rootCmd] args: %v\n", args)
 	},
 	Version: version.Version,
 }
